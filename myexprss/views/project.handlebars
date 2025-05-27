@@ -1,0 +1,88 @@
+<link rel="stylesheet" href="/assets/css/project-card.css" />
+
+<h2 class="project-header">ADD MY PROJECT</h2>
+<div class="form-container">
+  <form id="projectForm" class="project" action="/project" method="POST" enctype="multipart/form-data">
+    <div class="form-project">
+      <label for="project-name">Project Name</label>
+      <input type="text" id="project-name" name="projectName" />
+    </div>
+    <div class="form-inline">
+      <div class="form-project">
+        <label for="start-date">Start Date</label>
+        <input type="date" id="start-date" name="sdate" />
+      </div>
+      <div class="form-project">
+        <label for="end-date">End Date</label>
+        <input type="date" id="end-date" name="edate" />
+      </div>
+    </div>
+    <div class="form-project">
+      <label for="desc">Description</label>
+      <textarea id="desc" cols="30" rows="5" name="desc"></textarea>
+    </div>
+    <div class="form-project">
+      <label style="margin-bottom: 5px">Technologies</label>
+      <div class="checkbox">
+        <div class="checkbox-left">
+          <input type="checkbox" id="nodejs" style="padding: 0;" name="node" value="Node JS" />
+          <label for="nodejs" style="font-size: 1.5vw">Node JS</label><br />
+          <input type="checkbox" id="reactjs" style="padding: 0;" name="react" value="React JS" />
+          <label for="reactjs" style="font-size: 1.5vw">React JS</label>
+        </div>
+        <div class="checkbox-right">
+          <input type="checkbox" id="nextjs" style="padding: 0;" name="next" value="Next JS" />
+          <label for="nextjs" style="font-size: 1.5vw">Next JS</label><br />
+          <input type="checkbox" id="typescript" style="padding: 0;" name="typescript" value="Typescript" />
+          <label for="typescript" style="font-size: 1.5vw">TypeScript</label>
+        </div>
+      </div>
+    </div>
+    <div class="form-project">
+      <label for="project-image">Upload Image</label>
+      <input type="file" id="project-image" name="image" />
+      <img id="preview-image" style="display: none; width: 150px; margin-top: 10px;" />
+    </div>
+    <button type="submit" class="btn-project">Submit</button>
+    <span id="loadingSpinner" style="display: none;">
+      <div class="spinner"></div>
+    </span>
+  </form>
+</div>
+
+<div id="project-section" class="project-section">
+  <div class="container-project">
+    <h3 style="font-size: 3.1em; text-align: center">MY PROJECT</h3>
+    <div id="cardContainer" class="cardContainer">
+      <p id="emptyMessage" style="text-align: center; color: #888;"></p>
+    </div>
+  </div>
+</div>
+
+<script src="/assets/js/project.js"></script>
+<script>
+  const fileInput = document.querySelector('input[type="file"]');
+
+  fileInput.addEventListener('change', function () {
+    const file = this.files[0];
+
+    if (!file) return;
+
+    const allowedTypes = ['image/jpeg', 'image/png', 'image/jpg', 'image/gif'];
+    const maxSize = 2 * 1024 * 1024; // 2MB
+
+    // Cek ekstensi / MIME type
+    if (!allowedTypes.includes(file.type)) {
+      alert('❌ Format file tidak didukung. Hanya jpg, jpeg, png, atau gif.');
+      this.value = ''; // reset input
+      return;
+    }
+
+    // Cek ukuran file
+    if (file.size > maxSize) {
+      alert('❌ Ukuran file maksimal 2MB.');
+      this.value = ''; // reset input
+      return;
+    }
+  });
+</script>

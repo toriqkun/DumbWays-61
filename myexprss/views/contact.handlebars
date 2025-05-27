@@ -1,0 +1,25 @@
+<div class="container-form">
+  <form id="contact-form">
+    <h3>GET IN TOUCH</h3>
+    <label for="name">Nama</label>
+    <input type="text" id="name" name="name" placeholder="Enter your name" />
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email" />
+    <label for="number">Phone Number</label>
+    <input type="number" id="phone" name="phone" placeholder="Enter your number" />
+    <label for="select">Subject</label>
+    <select id="select" name="subject">
+      <option value=""></option>
+      <option value="Fullstack Developer">Fullstack Developer</option>
+      <option value="Frotend Developer">Frotend Developer</option>
+      <option value="Backend Developer">Backend Developer</option>
+    </select>
+    <label for="textarea">Your Message</label>
+    <textarea id="textarea" rows="8" name="message" placeholder="Write your message here...."></textarea>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+{{> footer}}
+
+<script src="/assets/js/contact.js"></script>

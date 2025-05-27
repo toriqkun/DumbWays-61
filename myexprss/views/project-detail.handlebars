@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="/assets/css/project-detail.css" />
+
+<div class="container conDetail py-5">
+  <div class="colm">
+    <h1 class="fw-bold my-5 text-center" style="color:#000;">{{project.project_name}}</h1>
+    <div class="container-card">
+      <div class="banner">
+        {{#if project.image}}
+          <img src="{{project.image}}" alt="Project Image" class="project-image mb-4" />
+        {{/if}}
+      </div>
+      <div class="card-right" style="color:#000;">
+        <div class="duration">
+          <h2 style="font-size: 2.3em;" class="mb-3">Duration</h2>
+          <p style="font-size: 1.2em;"><i class="fa-regular fa-calendar fa-lg me-3 ms-2"></i>{{project.start_date_formatted}}
+            -
+            {{project.end_date_formatted}}
+          </p>
+          <p style="font-size: 1.2em; margin-bottom: 20px;"><i class="fa-regular fa-clock fa-lg me-3 ms-2"></i>{{project.duration_label}}</p>
+        </div>
+        <div class="techno">
+          <h2 style="font-size: 2.3em;">Technologies</h2>
+          <div class="techno-icon">
+            <p style="margin-top: 3px;">{{#if project.tech_node}}<img class="tech-icon" src="/assets/img/node.png" alt="Node.js" />Node JS{{/if}}</p>
+            <p>{{#if project.tech_react}}<img class="tech-icon" src="/assets/img/react.png" alt="React" />React JS{{/if}}</p>
+            <p>{{#if project.tech_next}}<img class="tech-icon" src="/assets/img/next.png" alt="Next.js" />Next JS{{/if}}</p>
+            <p>{{#if project.tech_typescript}}<img class="tech-icon" src="/assets/img/typescript.png" alt="TypeScript" />Typescript{{/if}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="descrip mt-4">
+      <p>{{project.description}}</p>
+    </div>
+  </div>
+</div>
+{{> footer}}

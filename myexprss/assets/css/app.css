@@ -1,0 +1,567 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+li,
+a,
+button {
+  text-decoration: none !important;
+}
+
+*:focus {
+  outline: none;
+}
+
+/* Navbar */
+a.navbar-brand {
+  margin-left: 75px;
+}
+nav.navbar {
+  background-color: #191919;
+}
+
+.navbar-nav .link {
+  font-size: 1.2em;
+  font-weight: 600;
+  margin: 0 20px 0 10px;
+}
+
+.navbar-nav .contact {
+  padding: 7px 20px !important;
+  margin-right: 75px;
+  background-color: #4a4949;
+  color: rgb(216, 213, 213);
+  border-radius: 10px;
+  font-weight: 700;
+  transition: scale 0.2 ease;
+}
+
+.navbar-nav .contact:hover {
+  background-color: #5a5959;
+  scale: 1.05;
+}
+.navbar-nav .contact:active {
+  scale: 0.95;
+}
+.offcanvas-body a.contact {
+  width: 128px;
+  margin-left: 20px;
+  margin-top: 7px;
+}
+
+@media (max-width: 992px) {
+  a.navbar-brand {
+    margin-left: 5px;
+  }
+}
+
+/* Biodata */
+
+.profile-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 115px auto 50px;
+  box-sizing: border-box;
+  padding: 50px 50px;
+  width: 80%;
+  height: auto;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 5px 5px 20px rgba(6, 6, 6, 0.15);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about {
+  margin-top: 30px;
+  width: 50%;
+}
+
+.about p {
+  text-align: justify;
+  font-family: League Spartan, sans-serif;
+  font-size: 1.2em;
+  line-height: 1.3;
+}
+
+.btn-grup {
+  display: inline-block;
+  margin-top: 15px;
+}
+
+a.btn-contact {
+  display: inline-block;
+  align-items: center;
+  text-align: center;
+  padding: 5px 25px;
+  box-sizing: border-box;
+  font-size: 1.2em;
+  border-radius: 20px;
+  background-color: #050512;
+  color: white;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+a.btn-contact:hover {
+  background-color: #0b0637;
+  border-color: black;
+  color: white;
+}
+
+.btn-cv {
+  color: black;
+  margin-left: 20px;
+  font-size: 1.2em;
+}
+
+.social-links {
+  display: flex;
+  padding: 10px;
+  margin-top: 15px;
+  gap: 25px;
+}
+
+.social-links img {
+  font-size: 35px;
+  width: 40px;
+  margin: 10px 2px;
+}
+
+.profile-card {
+  margin-left: auto;
+  width: 40%;
+  background-color: white;
+  box-shadow: 5px 10px 20px rgba(5, 5, 5, 0.15);
+  text-align: center;
+  margin: auto 0;
+}
+
+.profile-card h3 {
+  margin-top: 9px;
+  font-size: 28px;
+}
+
+.profile-card img {
+  width: 95%;
+}
+
+@media (max-width: 1134px) {
+  .profile-container {
+    display: block;
+  }
+  .about {
+    width: 100%;
+  }
+  .profile-card {
+    width: 80%;
+    margin: 10px auto;
+  }
+  .profile-card h3 {
+    font-size: 2em;
+  }
+}
+
+@media (max-width: 798px) {
+  .profile-container {
+    padding: 20px;
+  }
+  .about {
+    margin-top: 0;
+    width: 100%;
+  }
+  .about h1 {
+    font-size: 1.7em;
+  }
+  .about p {
+    font-size: 1em;
+  }
+  .btn-grup {
+    font-size: 0.85em;
+  }
+}
+@media (max-width: 579px) {
+  .profile-container {
+    margin: 80px auto 0;
+    padding: 8px;
+    width: 80%;
+  }
+  .about {
+    margin-top: 5px;
+    width: 100%;
+  }
+  .about h1 {
+    font-size: 1.2em;
+  }
+  .about p {
+    font-size: 0.7em;
+  }
+  .btn-grup {
+    font-size: 0.6em;
+    margin-top: 5px;
+  }
+  a.btn-contact {
+    padding: 1vw 4.5vw;
+    font-size: 2.2vw;
+    margin-bottom: 12px;
+  }
+  .btn-cv {
+    margin-left: 10px;
+    font-size: 2.4vw;
+  }
+  .social-links {
+    padding: 1vw;
+    margin-top: -10px;
+    gap: 15px;
+  }
+  .social-links img {
+    width: 5.5vw;
+  }
+  .profile-card {
+    width: 50%;
+  }
+  .profile-card h3 {
+    font-size: 4.2vw;
+  }
+  .profile-card p {
+    font-size: 2.5vw;
+  }
+  footer .container p{
+    font-size: 2.1vw;
+  }
+}
+
+/* form contact */
+
+.container-form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 2vw 4vw;
+  width: 90%;
+  max-width: 800px;
+  border-radius: 10px;
+  color: black;
+}
+
+form h3 {
+  font-weight: bold;
+  margin: 100px 0 35px 0;
+  text-align: center;
+  font-size: 2.7em;
+}
+
+form input,
+form select {
+  border: 0;
+  padding-left: 10px;
+  margin: 10px 0;
+  height: 45px;
+  outline: none;
+  font-size: 1em;
+  border-radius: 5px;
+  box-shadow: 0 8px 12px rgb(43, 43, 43);
+}
+form textarea {
+  border: 0;
+  margin: 10px 0;
+  padding: 5px 10px;
+  outline: none;
+  font-size: 1em;
+  border-radius: 5px;
+  box-shadow: 0 8px 12px rgb(43, 43, 43);
+}
+label {
+  font-size: 1.4em;
+  font-weight: 600;
+}
+
+form button {
+  display: inline-block;
+  width: 130px;
+  padding: 5px 0;
+  background-color: #171717;
+  color: white;
+  font-size: 1.3em;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  border-radius: 30px;
+  margin-top: 20px;
+  transition: scale 0.2 ease;
+}
+
+form button:hover {
+  color: rgb(245, 243, 243);
+  background-color: #2a2a2a;
+  scale: 1.05;
+}
+
+form button:active {
+  scale: 0.95;
+}
+.message {
+  width: 100%;
+  position: relative;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+.message .success {
+  color: rgb(29, 225, 29);
+  font-size: 25px;
+  font-weight: bold;
+  position: absolute;
+  transition: 0.3s;
+  animation: buttons 0.3s linear;
+  display: none;
+}
+.message .danger {
+  color: red;
+  font-size: 25px;
+  font-weight: bold;
+  font-weight: bold;
+  position: absolute;
+  transition: 0.3s;
+  animation: buttons 0.3s linear;
+  display: none;
+}
+@keyframes buttons {
+  0% {
+    transform: scale(0.5);
+  }
+  50% {
+    transform: scale(0.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  form {
+    max-width: 550px;
+  }
+  form h3 {
+    font-size: 2.1em;
+    margin: 90px 0 20px;
+  }
+  form input,
+  form select {
+    height: 31px;
+    margin: 5px 0;
+  }
+  form textarea {
+    height: 190px;
+    margin: 0;
+  }
+
+  form label {
+    font-size: 1.2em;
+  }
+  form button {
+    width: 105px;
+    padding: 5px 0;
+    font-size: 1em;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  form {
+    max-width: 350px;
+  }
+  form h3 {
+    font-size: 1.8em;
+  }
+  form input,
+  form select {
+    height: 25px;
+    margin: 0;
+    padding-left: 5px;
+    font-size: 0.6em;
+  }
+  form textarea {
+    height: 150px;
+    margin: 0;
+    padding-left: 5px;
+    padding-top: 3px;
+    font-size: 0.6em;
+  }
+
+  form label {
+    font-size: 1em;
+  }
+  form button {
+    width: 70px;
+    padding: 3px 0;
+    font-size: 0.7em;
+    margin-top: 20px;
+  }
+}
+
+/* project */
+h2.project-header {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+  color: black;
+  padding: 100px 0 10px;
+  font-size: 2.5em;
+}
+
+div.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: League Spartan, sans-serif;
+}
+
+form.project {
+  display: block;
+  border-radius: 10px;
+  max-width: 750px;
+  width: 100%;
+}
+
+.form-project {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+form .form-inline {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 15px;
+}
+
+form .form-project label {
+  font-size: 1.3em !important;
+  font-weight: 550;
+}
+
+form .form-project input,
+form .form-project textarea {
+  margin-top: 5px;
+  padding: 9px;
+  border-radius: 8px;
+  box-shadow: 5 5px 10px rgb(53, 53, 53);
+}
+
+form .form-project input[type="checkbox"] {
+  height: auto;
+}
+
+.checkbox {
+  display: flex;
+  gap: 100px;
+  margin-left: 10px;
+}
+
+#project-image {
+  box-sizing: border-box;
+  border: 1px solid rgb(183, 181, 181);
+  font-size: 15px;
+  background: white;
+  outline: none;
+}
+
+.submit {
+  display: flex;
+  justify-content: end;
+}
+
+form button.btn-project {
+  width: 130px;
+  height: 40px;
+  border-radius: 25px;
+  margin-top: 15px;
+  background-color: rgb(21, 21, 21);
+  font-size: 1.3em;
+  font-weight: 700;
+  cursor: pointer;
+  transition: scale 0.2 ease;
+}
+
+form button.btn-project:hover {
+  color: rgb(245, 243, 243);
+  scale: 1.05;
+}
+
+form button.btn-project:active {
+  scale: 0.95;
+}
+
+@media (max-width: 768px) {
+  h2.project-header {
+    font-size: 1.8em;
+  }
+  form.project {
+    max-width: 580px;
+  }
+  form .form-project label {
+    font-size: 0.9em !important;
+  }
+  form .form-project input,
+  form .form-project textarea {
+    margin-top: 0;
+    margin-bottom: 14px;
+  }
+
+  form .form-project input[type="file"] {
+    padding-top: 1px;
+    padding-left: 0.5px;
+  }
+  form button.btn-project {
+    width: 100px;
+    height: 32px;
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 501px) {
+  h2.project-header {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+  }
+  form.project {
+    max-width: 350px;
+  }
+  form .form-inline {
+    grid-gap: unset;
+    grid-template-columns: 1fr;
+  }
+  form button.btn-project {
+    width: 100%;
+  }
+  form .form-project input {
+    border-radius: 4px;
+    height: 23px;
+    padding: 0 5px;
+    font-size: 0.75em;
+  }
+  form .form-project textarea {
+    border-radius: 4px;
+    height: 120px;
+    padding: 3px 5px;
+    font-size: 0.7em;
+  }
+  form .form-project input[type="file"] {
+    padding: 0;
+    height: 25px;
+    overflow: hidden;
+  }
+}
+
+/* project details */
