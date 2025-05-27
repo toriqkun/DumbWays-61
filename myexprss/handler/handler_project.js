@@ -35,7 +35,7 @@ async function handleUpdateProject(req, res) {
 
     // Jika ada gambar baru, hapus gambar lama
     if (req.file && req.file.filename) {
-      imageUrl = "/uploads/" + req.file.originalname;
+      imageUrl = "/uploads/" + req.file.filename;
 
       if (oldImageUrl) {
         const oldImagePath = path.join(__dirname, "..", oldImageUrl);
@@ -80,8 +80,8 @@ async function handleProject(req, res) {
 
     const technologies = [node, react, next, typescript].filter(Boolean).join(", ");
     const submittedAt = new Date().toISOString();
-    const image = req.file ? req.file.originalname : "";
-    const imageUrl = req.file ? "/uploads/" + req.file.originalname : "";
+    const image = req.file ? req.file.filename : "";
+    const imageUrl = req.file ? "/uploads/" + req.file.filename : "";
 
     if (!projectName || !sdate || !edate || !desc || !image) {
       return res.status(400).json({ status: "error", message: "Please fill all required fields and upload an image." });
@@ -92,6 +92,7 @@ async function handleProject(req, res) {
     console.log(`Start Date   : ${sdate}`);
     console.log(`End Date     : ${edate}`);
     console.log(`Technologies : ${technologies}`);
+    console.log(`Image        : ${image}`);
     console.log(`Submitted At : ${new Date(submittedAt).toLocaleString()}`);
     console.log("======================================\n");
 
