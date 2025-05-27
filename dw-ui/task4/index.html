@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- link font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- link font google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet" />
+
+    <!-- link CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- navbar -->
+
+    <header>
+      <div class="navbar">
+        <div class="brand"><a href="#">Icunnn</a></div>
+        <ul class="links">
+          <li><a href="home">Home</a></li>
+          <li><a href="myproject">My Project</a></li>
+        </ul>
+        <a href="#name" class="action_btn">Contact Me</a>
+        <div class="toggle_btn">
+          <i class="fa-solid fa-bars fa-lg"></i>
+        </div>
+      </div>
+
+      <div class="dropdown_menu">
+        <li><a href="home" class="links">Home</a></li>
+        <li><a href="myproject" class="links">My Project</a></li>
+        <li><a href="#name" class="action_btn">Contact Me</a></li>
+      </div>
+    </header>
+
+    <!-- akhir navbar -->
+
+    <!-- contact -->
+    <div style="display: flex; width: 100%; justify-content: center; margin-top: 20px">
+      <form style="display: flex; flex-direction: column; width: 700px; justify-content: center" onsubmit="submitData(event)">
+        <h1 style="text-align: center; margin: 50px">GET IN TOUCH</h1>
+        <label class="label-style" for="name">Name</label>
+        <input class="input-style" id="name" />
+        <label class="label-style" for="email">Email</label>
+        <input class="input-style" id="email" />
+        <label class="label-style" for="phoneNumber">Phone Number</label>
+        <input class="input-style" id="phoneNumber" />
+        <label class="label-style" for="subject">Subject</label>
+        <select class="input-style" id="subject">
+          <option value=""></option>
+          <option>Frontend Developer</option>
+          <option>Backend Developer</option>
+          <option>Fullstack Developer</option>
+        </select>
+        <label class="label-style" for="message">Your message</label>
+        <textarea class="input-style" id="message"></textarea>
+        <div class="btn">
+          <button type="submit" class="btn-submit">Submit</button>
+        </div>
+      </form>
+    </div>
+    <!-- akhir contact -->
+    <script src="script.js"></script>
+  </body>
+</html>

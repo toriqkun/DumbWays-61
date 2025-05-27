@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portofolio | Toriq Rosid</title>
+    <!-- link font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- link font google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="contact.css" />
+  </head>
+  <body>
+    <!-- navbar -->
+
+    <header>
+      <div class="navbar">
+        <div class="brand"><a href="#">Icunnn</a></div>
+        <ul class="links">
+          <li><a href="home">Home</a></li>
+          <li><a href="myproject">My Project</a></li>
+        </ul>
+        <a href="#name" class="action_btn">Contact Me</a>
+        <div class="toggle_btn">
+          <i class="fa-solid fa-bars fa-lg"></i>
+        </div>
+      </div>
+
+      <div class="dropdown_menu">
+        <li><a href="home" class="links">Home</a></li>
+        <li><a href="myproject" class="links">My Project</a></li>
+        <li><a href="#name" class="action_btn">Contact Me</a></li>
+      </div>
+    </header>
+
+    <!-- akhir navbar -->
+
+    <!-- ini contact me -->
+
+    <div class="container-form">
+      <div class="contact contact-header">
+        <h2 id="message" class="d-flex title fs-1 fw-bold py-5">GET IN TOUCH</h2>
+      </div>
+      <div class="contact contact-form">
+        <form action="contactme">
+          <div class="form mb-3">
+            <label for="name" class="form-name" >Name</label>
+            <input type="text" class="form-control" id="name" />
+            <label for="email" class="form-email" >Email</label>
+            <input type="email" class="form-control"  id="email" />
+            <label for="number" class="form-number" >Phone Number</label>
+            <input type="number" class="form-control"  id="number" />
+            <label class="form-subject" for="floatingSelect">Subject</label>
+            <select class="form-select shadow" id="floatingSelect" aria-label="Floating label select example">
+              <option selected></option>
+              <option value="1">Kritik</option>
+              <option value="2">Saran</option>
+              <option value="3">Customer Service</option>
+            </select>
+            <label class="form-message" for="floatingTextarea2">Your Message</label>
+            <textarea class="form-control" id="floatingTextarea2"></textarea>
+            <div class="btn">
+              <button class="submit me-md-2" type="button">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- akhir contact me -->
+
+    <script src="../task3/contact.js"></script>
+  </body>
+</html>

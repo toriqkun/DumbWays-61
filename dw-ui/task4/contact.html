@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Me</title>
+
+    <!-- link font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- link CSS -->
+    <link rel="stylesheet" href="contact.css" />
+  </head>
+  <body>
+    <!-- navbar -->
+
+    <header>
+      <div class="navbar">
+        <div class="logo"><img src="../task2/img/dumbways.png" alt="DumbWays" /></div>
+        <ul class="links">
+          <li><a href="home">Home</a></li>
+          <li><a href="myproject">My Project</a></li>
+        </ul>
+        <a href="#name" class="action_btn">Contact Me</a>
+        <div class="toggle_btn">
+          <i class="fa-solid fa-bars fa-lg"></i>
+        </div>
+      </div>
+
+      <div class="dropdown_menu">
+        <li><a href="home">Home</a></li>
+        <li><a href="myproject">My Project</a></li>
+        <li><a href="#name" class="action_btn">Contact Me</a></li>
+      </div>
+    </header>
+
+    <!-- akhir navbar -->
+
+    <!-- contact -->
+
+    <div class="container">
+      <form>
+        <h3>GET IN TOUCH</h3>
+        <label for="name">Nama</label>
+        <input type="text" id="name" />
+        <label for="email">Email</label>
+        <input type="email" id="email" />
+        <label for="number">Phone Number</label>
+        <input type="number" id="number" />
+        <label for="select">Subject</label>
+        <select id="select">
+          <option value=""></option>
+          <option value="1">Kritik</option>
+          <option value="2">Saran</option>
+          <option value="3">Customer Service</option>
+        </select>
+        <label for="textarea">Your Message</label>
+        <textarea id="textarea" rows="8"></textarea>
+        <button type="submit" onclick="myFunction">Submit</button>
+      </form>
+    </div>
+
+    <!-- akhir contact -->
+
+    <script src="contact.js"></script>
+  </body>
+</html>
