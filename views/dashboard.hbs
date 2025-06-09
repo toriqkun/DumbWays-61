@@ -1,0 +1,181 @@
+<div class="dashboard">
+
+  <div class="container main-content mt-5">
+    <div class="row justify-content-center mb-4">
+      <div class="col-md-8">
+
+        {{#if successMessage}}
+          <div class="alert alert-success" role="alert">
+            {{successMessage}}
+          </div>
+        {{/if}}
+
+        {{#if errorMessage}}
+          <div class="alert alert-danger" role="alert">
+            {{errorMessage}}
+          </div>
+        {{/if}}
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col">
+        <h3 class="say-hello">Selamat Datang, {{profile.fullName}}!</h3>
+      </div>
+    </div>
+    <div class="row justify-content-center my-5">
+      {{! CRUD TABLE TECH STACK }}
+      <div class="crud-table-container">
+        <h3 class="mb-3">Kelola Tech Stack</h3>
+        <a href="/add-techstack" class="btn btn-success mb-3"><i class="fas fa-plus"></i> Tambah</a>
+
+        <div class="table-responsive">
+          <table class="table table-striped table-hover align-middle">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Gambar</th>
+                <th>Nama Tools</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each techStacks}}
+                <tr>
+                  <td>{{addOne @index}}</td>
+                  <td>
+                    {{#if image}}
+                      <img src="{{image}}" alt="{{nama_tools}}" class="img-fluid rounded" />
+                    {{/if}}
+                  </td>
+                  <td>{{nama_tools}}</td>
+                  <td>
+                    <a href="/edit-techstack/{{id}}" class="btn btn-action-edit"><i class="fas fa-edit"></i> Edit</a>
+                    <form action="/delete-techstack/{{id}}" method="POST" class="d-inline">
+                      <button type="submit" class="btn btn-action-delete" onclick="return confirm('Apakah Anda yakin ingin menghapus tool ini?');">
+                        <i class="fas fa-trash-alt"></i>
+                        Hapus
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              {{else}}
+                <tr>
+                  <td colspan="4" class="text-center">Belum ada data Tech Stack.</td>
+                </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {{! CRUD TABLE EXPERIENCE }}
+      <div class="crud-table-container mt-5">
+        <h3 class="mb-3">Kelola Pengalaman Kerja</h3>
+        <a href="/add-experience" class="btn btn-success mb-3">
+          <i class="fas fa-plus"></i>
+          Tambah
+        </a>
+
+        <div class="table-responsive">
+          <table class="table table-striped table-hover align-middle">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Pekerjaan</th>
+                <th>Perusahaan</th>
+                <th>Job Responsibilities</th>
+                <th>Technologies</th>
+                <th>Periode</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each experiences}}
+                <tr>
+                  <td>{{addOne @index}}</td>
+                  <td>{{position}}</td>
+                  <td>{{company}}</td>
+                  <td>
+                    <ul class="mb-0 ps-3">
+                      {{#each job_responsibilities}}
+                        <li>{{this}}</li>
+                      {{/each}}
+                    </ul>
+                  </td>
+                  <td>{{technologies}}</td>
+                  <td>{{formattedPeriod}}</td>
+                  <td>
+                    <a href="/edit-experience/{{id}}" class="btn btn-action-edit">
+                      <i class="fas fa-edit"></i>
+                    </a>
+                    <form action="/delete-experience/{{id}}" method="POST" class="d-inline">
+                      <button type="submit" class="btn btn-action-delete" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
+                        <i class="fas fa-trash-alt"></i>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              {{else}}
+                <tr>
+                  <td colspan="7" class="text-center">Belum ada data pengalaman kerja.</td>
+                </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {{! CRUD TABLE MY PROJECTS }}
+      <div class="crud-table-container mt-5">
+        <h3 class="mb-3">Kelola My Projects</h3>
+        <a href="/add-projects" class="btn btn-success mb-3">
+          <i class="fas fa-plus"></i>
+          Tambah
+        </a>
+
+        <div class="table-responsive">
+          <table class="table table-striped table-hover align-middle">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Project Name</th>
+                <th>Description</th>
+                <th>Technologies</th>
+                <th>Repo Link</th>
+                <th>Live Demo</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each projects}}
+                <tr>
+                  <td>{{addOne @index}}</td>
+                  <td>{{project_name}}</td>
+                  <td>{{description}}</td>
+                  <td>{{technologies}}</td>
+                  <td><a href="{{repo_link}}" target="_blank">{{repo_link}}</a></td>
+                  <td><a href="{{live_demo}}" target="_blank">{{live_demo}}</a></td>
+                  <td>
+                    <a href="/edit-project/{{id}}" class="btn btn-action-edit">
+                      <i class="fas fa-edit"></i>
+                    </a>
+                    <form action="/delete-project/{{id}}" method="POST" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus project ini?');">
+                      <button type="submit" class="btn btn-action-delete">
+                        <i class="fas fa-trash-alt"></i>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              {{else}}
+                <tr>
+                  <td colspan="7" class="text-center">Belum ada data project.</td>
+                </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

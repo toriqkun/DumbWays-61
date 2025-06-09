@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="/assets/img/iconlogo.png" alt="Logo" style="height: 30px;" />
+    </a>
+    <div class="ms-auto d-flex align-items-center">
+
+      <div class="dropdown">
+        <a class="nav-link dropdown-toggle d-flex align-items-center text-white" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="{{profile.imageUrl}}" alt="Profile Picture" class="rounded-circle me-2" style="width: 40px; height: 40px; object-fit: cover;" />
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end mt-1" aria-labelledby="profileDropdown">
+          <li><a class="dropdown-item" href="/dashboard"><i class="fa-solid fa-house" style="margin-right: 6px;"></i> Dashboard</a></li>
+          <li><a class="dropdown-item" href="/profile"><i class="fa-solid fa-user" style="margin-right: 10px;"></i> Profile Saya</a></li>
+          <li>
+            <form action="/logout" method="POST" class="d-inline">
+              <button type="submit" class="dropdown-item text-danger">
+                <i class="fa-solid fa-right-from-bracket" style="margin-right: 7px;"></i>
+                Keluar
+              </button>
+            </form>
+          </li>
+        </ul>
+      </div>
+      {{! Dark Mode Toggle }}
+      <button id="theme-toggle" class="btn" style="border: none;">
+        <i class="fa-regular fa-moon fa-xl d-block dark-mode-icon"></i>
+        <i class="bi bi-brightness-high d-none light-mode-icon"></i>
+      </button>
+    </div>
+  </div>
+</nav>

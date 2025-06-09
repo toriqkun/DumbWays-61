@@ -1,0 +1,47 @@
+<div class="account-container">
+  <div class="form-card">
+    <h2 class="text-center fw-bold mb-4">Form Registrasi</h2>
+
+    {{#if errors.formError}}
+      <div class="alert alert-danger text-center mb-3" role="alert">
+        {{errors.formError}}
+      </div>
+    {{/if}}
+
+    {{#if errors.serverError}}
+      <div class="alert alert-danger text-center mb-3" role="alert">
+        {{errors.serverError}}
+      </div>
+    {{/if}}
+
+    <form action="/register" method="POST">
+      <div class="mb-3">
+        <input type="email" class="form-control" id="email" name="email" placeholder="Masukkan email" required value="{{email}}" />
+        {{#if errors.emailError}}
+          <div class="text-danger">{{errors.emailError}}</div>
+        {{/if}}
+      </div>
+
+      <div class="mb-3 position-relative">
+        <input type="password" class="form-control" id="password" name="password" placeholder="Masukkan password" required />
+        <i class="bi bi-eye-slash toggle-password" toggle="#password"></i>
+      </div>
+
+      <div class="mb-4 position-relative">
+        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Masukkan ulang password" required />
+        <i class="bi bi-eye-slash toggle-password" toggle="#confirmPassword"></i>
+      </div>
+
+      {{#if errors.passwordError}}
+        <div class="text-danger mb-2">{{errors.passwordError}}</div>
+      {{/if}}
+
+      <button type="submit" class="btn btn-custom-primary w-100 mb-3">Daftar</button>
+
+      <p class="text-center mb-0">
+        Sudah punya akun?
+        <a href="/login" class="text-link">Login</a>
+      </p>
+    </form>
+  </div>
+</div>

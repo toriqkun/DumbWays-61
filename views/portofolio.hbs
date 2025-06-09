@@ -1,0 +1,222 @@
+{{> navbar}}
+
+<div style="height: 150px;"></div>
+{{! Main }}
+<main class="container-xxl mx-auto w-100 px-sm-4 px-lg-4">
+  {{! Hero Section }}
+  <div class="container mx-auto px-4 py-5 py-md-5">
+    {{! Jumbotron }}
+    <div id="hero">
+      <div class="jumbotron d-flex w-100 justify-content-between align-items-center custom-gap mb-32" style="gap: 6rem;">
+        {{! Left Content }}
+        <div class="profile-wrapper">
+          <div class="gradient-border">
+            <div class="content-box">
+              <img src="/assets/img/madara minion.jpg" alt="Profile" class="profile-img" />
+            </div>
+          </div>
+        </div>
+
+        {{! Right COntent }}
+        <div class="right-jumbotron w-100 text-lg-start mx-auto">
+          <div class="mb-4">
+            <h1 class="display-3 fw-bold mb-2">Hi, I'm Toriq 👋</h1>
+            <p class="fs-4 text-muted fw-medium mb-3">
+              Indie Hacker &amp; Full-Stack Developer
+            </p>
+            <p class="fs-5 text-muted">
+              I build and ship digital products from scratch to production. Passionate about creating end-to-end solutions and turning ideas into fully functional applications. With expertise in both
+              frontend and backend development, I handle everything from initial concept to deployment and maintenance.
+            </p>
+          </div>
+
+          <!-- Location & Availability -->
+          <div class="d-flex flex-column align-items-center align-items-lg-start gap-2 mb-4">
+            <div class="d-flex align-items-center gap-2 text-muted">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                <path d="M8 0a5.53 5.53 0 0 0-5.5 5.5C2.5 9.623 8 16 8 16s5.5-6.377 5.5-10.5A5.53 5.53 0 0 0 8 0zm0 7.5a2 2 0 1 1 0-4 2 2 0 0 1 0 4z" />
+              </svg>
+              <span>Bekasi, Tarumajaya, Indonesia</span>
+            </div>
+            <div class="d-flex align-items-center gap-2 text-muted">
+              <span class="d-inline-block rounded-circle bg-success" style="width: 8px; height: 8px;"></span>
+              <span>Available for new projects</span>
+            </div>
+          </div>
+
+          <!-- Social Links & CTA -->
+          <div class="jumbotron-link d-flex flex-column flex-sm-row align-items-center justify-content-center justify-content-lg-start gap-3">
+            <a href="#" target="_blank" class="btn btn-wa d-flex align-items-center px-4 py-2">
+              <img src="/assets/img/whatsapp.png" alt="WhatsApp" class="me-2" style="width: 20px; height: 20px;" />
+              Let's Talk
+            </a>
+            <a href="#" target="_blank" class="btn-cv d-flex align-items-center px-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="me-2" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                ></path>
+              </svg>
+              Download CV
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{! Tech Stack Section }}
+    <div class="container px-0 mb-32 mt-12" id="tech-stack">
+      <h2 class="fs-2 mb-5 fw-bold">Tech Stack - Tools I Use Everyday</h2>
+
+      <div class="position-relative">
+        <div class="gradient-overlay-left"></div>
+        <div class="gradient-overlay-right"></div>
+
+        <div class="swiper tech-swiper">
+          <div class="swiper-wrapper py-3">
+            {{#each techStacks}}
+              <div class="swiper-slide">
+                <div class="tech-item">
+                  <div class="tech-icon"><img src="{{this.image}}" alt="{{this.nama_tools}}" /></div>
+                  <span>{{this.nama_tools}}</span>
+                </div>
+              </div>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+    </div>
+    {{! Experience }}
+    <div id="experience">
+      <!-- Experience Section -->
+      <div class="mb-32">
+        <div class="d-flex justify-content-between align-items-center mb-5">
+          <h2 class="fs-2 fw-bold">Work Experiences:</h2>
+        </div>
+        <div class="d-grid gap-4">
+
+          {{! Project Baru }}
+          {{#each experiences}}
+            <div class="card d-flex flex-column flex-md-row align-items-start bg-exper p-4 rounded-3 shadow-sm">
+              <img src="{{this.imageUrl}}" alt="{{this.company}} Logo" class="me-md-3 mb-3 mb-md-0 bg-white" style="width: 64px; height: 64px; object-fit: contain; border-radius: 0.5rem;" />
+              <div class="flex-grow-1">
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-3">
+                  <div>
+                    <h3 class="h5 fw-semibold">{{this.position}}</h3>
+                    <p class="text-success mb-1">{{this.company}}</p>
+                  </div>
+                  <span class="text-muted mt-2 mt-md-0">{{this.displayDate}}</span>
+                </div>
+                <ul class="text-muted mb-3 ps-3">
+                  {{#each this.responsibilities}}
+                    <li>{{this}}</li>
+                  {{/each}}
+                </ul>
+                <div class="d-flex flex-wrap gap-2">
+                  {{#each this.technologies}}
+                    <span class="badge tools-exper text-muted">{{this}}</span>
+                  {{/each}}
+                </div>
+              </div>
+            </div>
+          {{else}}
+            <p class="text-muted text-center">Belum ada pengalaman kerja yang ditambahkan.</p>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+    {{! Projects }}
+    <div id="projects">
+      <!-- Projects Section -->
+      <div class="mb-32">
+        <div class="d-flex justify-content-between align-items-center" style="margin-bottom: 3rem;">
+          <h2 class="fs-2 fw-bold">My Projects:</h2>
+        </div>
+        <div class="row g-4">
+          {{#each projects}}
+          <div class="col-md-6">
+            <div class="card project-info shadow-sm h-100">
+              <div class="bg-project d-flex align-items-center justify-content-center" style="height: 200px;">
+                <img src="{{this.image_url}}" alt="{{this.project_name}}" class="img-fluid" style="object-fit: contain; max-height: 100%;" />
+              </div>
+              <div class="card-body p-4">
+                <h3 class="mb-3" style="font-size: 1.35rem; font-weight: 600;">{{this.project_name}}</h3>
+                <p class="text-muted mb-3" style="font-size: 0.875rem;">{{this.description}}</p>
+                <div class="mb-4">
+                  {{#each this.technologies_array}}
+                  <span class="rounded-pill project-tools fw-medium me-1" style="padding: 4px 12px; font-size: 0.75rem;">{{this}}</span>
+                  {{/each}}
+                </div>
+                <div class="d-flex" style="gap: 0.75rem;">
+                  
+                  {{#if this.isPrivateRepo}}
+                  <span class="d-inline-flex align-items-center repos">
+                    <svg style="width: 1rem; margin-bottom: 2px; margin-right: 6px" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.237 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
+                    </svg>
+                    Private Repository
+                  </span>
+                  {{else if this.repo_link}} <a href="{{this.repo_link}}" target="_blank" class="text-decoration-none d-inline-flex align-items-center repos" style="font-size: 0.75rem; margin-right: 1.75rem">
+                    <svg style="width: 1rem; margin-bottom: 2px; margin-right: 6px" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.237 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
+                    </svg>
+                    View on GitHub
+                  </a>
+                  {{/if}}
+
+                  {{#if this.hasLiveDemo}}
+                  <a href="{{this.live_demo}}" target="_blank" class="text-decoration-none d-inline-flex align-items-center demo">
+                    <svg style="width: 1rem; margin-bottom: 2px; margin-right: 6px" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
+                    Live Demo
+                  </a>
+                  {{else}}
+                  <span class="text-decoration-none d-inline-flex align-items-center demo text-muted opacity-75" style="font-size: 0.75rem; margin-top: 1px;">
+                    <svg style="width: 1rem; margin-bottom: 2px; margin-right: 6px" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
+                    Demo Unavailable
+                  </span>
+                  {{/if}}
+                </div>
+              </div>
+            </div>
+          </div>
+          {{else}}
+          <p class="text-muted text-center w-100">Belum ada proyek yang ditambahkan.</p>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+
+    {{! Contact }}
+    <div id="contact" class="container py-5">
+      <!-- Contact Section -->
+      <div class="mb-5 text-center">
+        <h2 class="fw-bold mb-2">Let's build something together</h2>
+        <p class="text-secondary mb-5 small fs-6">Feel free to reach out if you're looking for a developer, have a question, or just want to connect.</p>
+        <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-3">
+          <a href="mailto:toriqkun25@gmail.com" class="d-flex align-items-center text-secondary text-decoration-none mail-me">
+            <svg class="me-2" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+            <span>toriqkun25@gmail.com</span>
+          </a>
+          <span class="d-none d-md-inline text-muted mx-2">|</span>
+          <div class="d-flex align-items-center" style="margin-top: 2.5px;">
+            <img src="/assets/img/whatsapp.png" alt="WhatsApp" class="me-2" style="width: 20px; height: 20px;" />
+            <span>+62 857-1112-4767</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+{{> footer}}
+
+<a href="#top" id="backToTop" class="position-fixed d-none btn bg-to-top rounded-circle" style="bottom: 1.5rem; right: 1.5rem; width: 3rem; height: 3rem; z-index: 9999;">
+  <i class="fa-solid fa-angle-up fa-2xl"></i>
+</a>

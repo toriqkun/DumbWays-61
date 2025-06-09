@@ -1,0 +1,49 @@
+<div class="container" style="padding: 100px 250px;">
+  <div class="form-experience rounded shadow-sm" style="padding: 20px;">
+    <h3 class="text-center fw-bold mb-4">ADD MY PROJECTS</h3>
+
+    <form action="/add-projects" method="POST" enctype="multipart/form-data">
+      <!-- Project name -->
+      <div class="mb-3">
+        <label for="project_name" class="form-label fw-semibold">Project Name</label>
+        <input type="text" class="form-control" id="project_name" name="project_name" />
+      </div>
+
+      <!-- Description -->
+      <div class="mb-3">
+        <label for="desc" class="form-label fw-semibold">Description</label>
+        <textarea type="text" class="form-control" id="desc" cols="30" rows="5" name="description"></textarea>
+      </div>
+
+      {{! Repository }}
+      <div>
+        <label for="repo_link" class="form-label fw-semibold">Repository Link</label>
+        <input type="url" id="repo_link" class="form-control" name="repo_link" />
+      </div>
+
+      {{! Live Demo }}
+      <div>
+        <label for="live_demo" class="form-label fw-semibold">Live Demo Link</label>
+        <input type="url" id="live_demo" class="form-control" name="live_demo" />
+      </div>
+
+      {{! Technologies }}
+      <div class="mb-3">
+        <label for="techno" class="form-label fw-semibold">Technologies</label>
+        <input type="text" class="form-control" placeholder="Contoh: Tailwind, Bootstrap, Chrome" name="technologies" />
+        <small class="form-text text-muted">Pisahkan tiap teknologi dengan koma</small>
+      </div>
+
+      {{! Upload Image }}
+      <div class="mb-3">
+        <label for="image" class="form-label fw-semibold">Upload Image</label>
+        <input type="file" class="form-control" name="image" />
+      </div>
+
+      <!-- Tombol Submit -->
+      <div class="text-end mt-4">
+        <button type="submit" class="btn btn-experience rounded-pill">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,58 @@
+<div class="container" style="padding: 100px 250px;">
+  <div class="form-experience rounded shadow-sm" style="padding: 20px;">
+    <h3 class="text-center fw-bold mb-4">EDIT PROJECT</h3>
+
+    <form action="/edit-project/{{project.id}}?_method=PUT" method="POST" enctype="multipart/form-data">
+
+      <!-- Project name -->
+      <div class="mb-3">
+        <label for="project_name" class="form-label fw-semibold">Project Name</label>
+        <input type="text" class="form-control" id="project_name" name="project_name" value="{{project.project_name}}" required />
+      </div>
+
+      <!-- Description -->
+      <div class="mb-3">
+        <label for="desc" class="form-label fw-semibold">Description</label>
+        <textarea class="form-control" id="desc" cols="30" rows="5" name="description" style="border: 1px solid black;" required>{{project.description}}</textarea>
+      </div>
+
+      <!-- Repository -->
+      <div class="mb-3">
+        <label for="repo_link" class="form-label fw-semibold">Repository Link</label>
+        <input type="url" id="repo_link" class="form-control" name="repo_link" value="{{project.repo_link}}" />
+      </div>
+
+      <!-- Live Demo -->
+      <div class="mb-3">
+        <label for="live_demo" class="form-label fw-semibold">Live Demo Link</label>
+        <input type="url" id="live_demo" class="form-control" name="live_demo" value="{{project.live_demo}}" />
+      </div>
+
+      <!-- Technologies -->
+      <div class="mb-3">
+        <label for="technologies" class="form-label fw-semibold">Technologies</label>
+        <input type="text" class="form-control" placeholder="Contoh: Tailwind, Bootstrap, Chrome" name="technologies" value="{{project.technologies}}" required />
+        <small class="form-text text-muted">Pisahkan tiap teknologi dengan koma</small>
+      </div>
+
+      <!-- Current Image Preview -->
+      {{#if project.image}}
+        <div class="mb-3">
+          <label class="form-label fw-semibold">Current Image</label><br />
+          <img src="{{project.image}}" alt="Current Project Image" class="img-thumbnail" style="max-width: 200px;" />
+        </div>
+      {{/if}}
+
+      <!-- Upload New Image -->
+      <div class="mb-3">
+        <label for="image" class="form-label fw-semibold">Upload New Image (optional)</label>
+        <input type="file" class="form-control" name="image" />
+      </div>
+
+      <!-- Tombol Submit -->
+      <div class="text-end mt-4">
+        <button type="submit" class="btn btn-experience rounded-pill">Update Project</button>
+      </div>
+    </form>
+  </div>
+</div>

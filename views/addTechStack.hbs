@@ -1,0 +1,24 @@
+<div class="container" style="padding: 100px 250px;">
+  <div class="form-experience rounded shadow-sm" style="padding: 20px;">
+    <h3 class="text-center fw-bold mb-4">ADD TECH STACK TOOLS</h3>
+
+    <form action="/add-techstack" method="POST" enctype="multipart/form-data">
+      <!-- Image Tools -->
+      <div class="mb-3">
+        <label for="toolsImage" class="form-label fw-semibold">Upload Image</label>
+        <input type="file" class="form-control" id="toolsImage" name="toolsImage" />
+      </div>
+
+      <!-- Name Tools -->
+      <div class="mb-3">
+        <label for="nameTools" class="form-label fw-semibold">Nama Tools</label>
+        <input type="text" class="form-control" id="nameTools" name="nameTools" />
+      </div>
+
+      <!-- Tombol Submit -->
+      <div class="text-end mt-4">
+        <button type="submit" class="btn btn-experience rounded-pill">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>

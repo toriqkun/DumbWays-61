@@ -1,0 +1,74 @@
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container-fluid">
+    <a class="brand-icon navbar-brand" href="#"><img src="/assets/img/iconlogo.png" alt="" style="width: 35px; height: auto;" /></a>
+    <div class="mobile-menu">
+      {{! Dark Mode Mobile }}
+      <button id="theme-toggle-mobile" class="btn mobile-dark" style="border: none;">
+        <i class="fa-regular fa-moon fa-xl d-block dark-mode-icon"></i>
+        <i class="bi bi-brightness-high d-none light-mode-icon"></i>
+      </button>
+      <button class="bars" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar">
+        <i class="fa-solid fa-bars fa-xl"></i>
+      </button>
+    </div>
+    <div class="long">
+      <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+        <li class="nav-item plink">
+          <a class="nav-link" href="#tech-stack">Tech Stack</a>
+        </li>
+        <li class="nav-item plink">
+          <a class="nav-link" href="#experience">Experience</a>
+        </li>
+        <li class="nav-item plink">
+          <a class="nav-link" href="#projects">Projects</a>
+        </li>
+        <li class="nav-item whatsapp">
+          <a class="nav" href="#"><img src="/assets/img/whatsapp.png" alt="" style="height: 20px;" class="me-2" />Let's Talk</a>
+        </li>
+        <li class="nav-item unduh-cv">
+          <a class="nav-cv" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" class="me-1" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+              ></path>
+            </svg>Download CV</a>
+        </li>
+        {{! Dark Mode Toggle }}
+        <button id="theme-toggle" class="btn" style="border: none;">
+          <i class="fa-regular fa-moon fa-xl d-block dark-mode-icon"></i>
+          <i class="bi bi-brightness-high d-none light-mode-icon"></i>
+        </button>
+      </ul>
+    </div>
+  </div>
+  {{! Mobile Drawer }}
+  <div class="menu">
+    <div class="drawer-menu offcanvas offcanvas-end" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+      <div class="offcanvas-header">
+        <img src="/assets/img/iconlogo.png" alt="" style="width: 35px;" />
+        <button class="close-menu" data-bs-dismiss="offcanvas">
+          <i class="fa-solid fa-xmark fa-2xl"></i>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Tech Stack</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Experience</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Projects</a>
+          </li>
+          <li class="nav-item unduh-cv-mobile">
+            <a class="nav-cv" href="#">Download CV</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

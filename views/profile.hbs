@@ -1,0 +1,133 @@
+<div class="dashboard">
+  <div class="container main-content mt-5">
+    <div class="row justify-content-between">
+      {{! Sidebar Kiri }}
+      <div class="col-md-4">
+        <div class="card profile-section">
+          <div class="profile-img-container">
+            {{#if user.profile_image}}
+              <img src="/uploads/{{user.profile_image}}" alt="Profile Picture" class="profile-img" />
+            {{else}}
+              <img src="/assets/img/default-profile.jpg" alt="Default Profile" class="profile-img" />
+            {{/if}}
+          </div>
+          <div class="profile-name">
+            {{user.full_name}}
+          </div>
+          <button type="button" class="btn btn-edit-profile" data-bs-toggle="modal" data-bs-target="#editProfileModal">
+            <i class="fa-solid fa-pen-to-square me-2"></i>Edit Profile
+          </button>
+        </div>
+      </div>
+
+      {{! Konten Utama Kanan }}
+      <div class="col-md-8">
+        <div class="card shadow-sm p-3 mb-3">
+          <h4 class="card-title">Pendidikan</h4>
+          <hr />
+          {{#if hasEducation}}
+            {{! Loop melalui data pendidikan di sini jika ada }}
+            {{!--
+                        {{#each user.education}}
+                        <div class="mb-2">
+                            <h5>{{major}} di {{university}}</h5>
+                            <p class="text-muted"><small>{{startDate}} - {{endDate}}</small></p>
+                        </div>
+                        {{/each}}
+                        --}}
+          {{else}}
+            <div class="text-center py-5 text-muted">
+              <i class="fas fa-box-open fa-3x mb-3"></i>
+              <p>No Data</p>
+            </div>
+          {{/if}}
+          <button class="btn btn-warning mt-3 float-end" style="width: auto;">Buat Baru</button>
+        </div>
+
+        <div class="card shadow-sm p-3 mb-3">
+          <h4 class="card-title">Pengalaman</h4>
+          <hr />
+          {{#if hasExperience}}
+            {{! Loop melalui data pengalaman di sini jika ada }}
+            {{!--
+                        {{#each user.experience}}
+                        <div class="mb-2">
+                            <h5>{{position}} di {{company}}</h5>
+                            <p class="text-muted"><small>{{startDate}} - {{endDate}}</small></p>
+                            <ul>
+                                {{#each responsibilities}}
+                                <li>{{this}}</li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                        {{/each}}
+                        --}}
+          {{else}}
+            <div class="text-center py-5 text-muted">
+              <i class="fas fa-box-open fa-3x mb-3"></i>
+              <p>No Data</p>
+            </div>
+          {{/if}}
+          <button class="btn btn-warning mt-3 float-end" style="width: auto;">Buat Baru</button>
+        </div>
+
+        <div class="card shadow-sm p-3 mb-3">
+          <h4 class="card-title">Keahlian</h4>
+          <hr />
+          {{#if hasSkills}}
+            {{! Loop melalui data keahlian di sini jika ada }}
+            {{!--
+                        <div class="d-flex flex-wrap">
+                            {{#each user.skills}}
+                            <span class="badge bg-info text-dark me-2 mb-2">{{this}}</span>
+                            {{/each}}
+                        </div>
+                        --}}
+          {{else}}
+            <div class="text-center py-5 text-muted">
+              <i class="fas fa-box-open fa-3x mb-3"></i>
+              <p>No Data</p>
+            </div>
+          {{/if}}
+          <button class="btn btn-warning mt-3 float-end" style="width: auto;">Buat Baru</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Edit Profile -->
+<div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editProfileModalLabel">Edit Profile</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="editProfileForm" enctype="multipart/form-data">
+          <div class="mb-3">
+            <label for="fullName" class="form-label">Nama Lengkap</label>
+            <input type="text" class="form-control" id="fullName" name="fullName" value="{{user.full_name}}" />
+          </div>
+          <div class="mb-3">
+            <label for="profileImage" class="form-label">Foto Profil</label>
+            <input type="file" class="form-control" id="profileImage" name="profileImage" accept="image/*" />
+            <small class="form-text text-muted">
+              Gambar saat ini:<br />
+              {{#if user.profile_image}}
+                <img src="/uploads/{{user.profile_image}}" alt="Current Profile" class="img-thumbnail mt-2" style="max-width: 100px;" />
+              {{else}}
+                Tidak ada gambar
+              {{/if}}
+            </small>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+        <button type="button" class="btn btn-primary" id="saveProfileChanges">Simpan Perubahan</button>
+      </div>
+    </div>
+  </div>
+</div>

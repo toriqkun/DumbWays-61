@@ -1,0 +1,70 @@
+<div class="container" style="padding: 100px 250px;">
+  <div class="form-experience rounded shadow-sm" style="padding: 20px;">
+    <h3 class="text-center fw-bold mb-4">EDIT MY WORK EXPERIENCE</h3>
+
+    <form action="/edit-experience/{{experience.id}}?_method=PUT" method="POST" enctype="multipart/form-data">
+      <!-- Pekerjaan -->
+      <div class="mb-3">
+        <label for="pekerjaan" class="form-label fw-semibold">Pekerjaan</label>
+        <input type="text" class="form-control" id="pekerjaan" name="pekerjaan" value="{{experience.position}}">
+      </div>
+
+      <!-- Perusahaan -->
+      <div class="mb-3">
+        <label for="perusahaan" class="form-label fw-semibold">Perusahaan</label>
+        <input type="text" class="form-control" id="perusahaan" name="perusahaan" value="{{experience.company}}">
+      </div>
+
+      <!-- Start Date & End Date -->
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="startDate" class="form-label fw-semibold">Start Date</label>
+          <input type="date" class="form-control" id="startDate" name="sdate" value="{{experience.start_date_formatted}}">
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="endDate" class="form-label fw-semibold">End Date</label>
+          <input type="date" class="form-control" id="endDate" name="edate" value="{{experience.end_date_formatted}}">
+          <div class="form-check mt-2">
+            <input class="form-check-input" type="checkbox" id="masihBekerja" name="present" {{#if experience.isCurrentJob}}checked{{/if}}>
+            <label class="form-check-label" for="masihBekerja">Saya masih bekerja di sini</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Job Responsibilities -->
+      <div class="mb-3">
+        <label class="form-label fw-semibold">Job Responsibilities</label>
+        <input type="text" class="form-control mb-3" placeholder="Tugas 1" name="task1" value="{{experience.task1}}">
+        <input type="text" class="form-control mb-3" placeholder="Tugas 2" name="task2" value="{{experience.task2}}">
+        <input type="text" class="form-control mb-3" placeholder="Tugas 3" name="task3" value="{{experience.task3}}">
+        <input type="text" class="form-control mb-3" placeholder="Tugas 4" name="task4" value="{{experience.task4}}">
+        <input type="text" class="form-control mb-3" placeholder="Tugas 5" name="task5" value="{{experience.task5}}">
+      </div>
+
+      <!-- Technologies -->
+      <div class="mb-3">
+        <label for="techno" class="form-label fw-semibold">Technologies</label>
+        <input type="text" class="form-control" id="techno" name="techno" value="{{experience.technologies}}">
+        <small class="form-text text-muted">Pisahkan tiap teknologi dengan koma</small>
+      </div>
+
+      <!-- Upload Image -->
+      <div class="mb-3">
+        <label for="file" class="form-label fw-semibold">Upload Image</label>
+        <input type="file" class="form-control" name="file">
+        {{#if experience.image_url}}
+          <div class="mt-2">
+            <small class="text-muted">Gambar saat ini:</small><br>
+            <img src="{{experience.image_url}}" alt="Current Image" style="max-height: 120px;">
+          </div>
+        {{/if}}
+        <input type="hidden" name="old_image" value="{{experience.image_url}}">
+      </div>
+
+      <!-- Tombol Submit -->
+      <div class="text-end mt-4">
+        <button type="submit" class="btn btn-experience rounded-pill">Update</button>
+      </div>
+    </form>
+  </div>
+</div>

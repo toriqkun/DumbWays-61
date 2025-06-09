@@ -1,0 +1,37 @@
+<div class="account-container">
+  <div class="form-card">
+    <h2 class="text-center fw-bold mb-4">Form Login</h2>
+
+    {{#if registrationSuccess}}
+      <div class="alert alert-success text-center mb-3" role="alert">
+        Registrasi berhasil! Silakan login.
+      </div>
+    {{/if}}
+
+    {{#if loginError}}
+      <div class="alert alert-danger text-center mb-3" role="alert">
+        {{loginError}}
+      </div>
+    {{/if}}
+
+    <form action="/login" method="POST">
+      <div class="mb-3">
+        <input type="email" class="form-control" id="email" name="email" placeholder="Masukkan email" required />
+      </div>
+      <div class="mb-4 position-relative">
+        <input type="password" class="form-control" id="password" name="password" placeholder="Masukkan password" required />
+        <i class="bi bi-eye-slash toggle-password" toggle="#password"></i>
+      </div>
+
+      {{#if errorMessage}}
+        <div class="text-danger mb-2">{{errorMessage}}</div>
+      {{/if}}
+
+      {{! <p class="text-end mb-4"><a href="/forgot-password" class="text-link">Lupa password?</a></p> }}
+
+      <button type="submit" class="btn btn-custom-primary w-100 mb-3">Login</button>
+
+      <p class="text-center mb-0">Belum punya akun? <a href="/register" class="text-link">Daftar</a></p>
+    </form>
+  </div>
+</div>
